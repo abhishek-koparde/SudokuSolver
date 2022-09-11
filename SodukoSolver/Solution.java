@@ -109,14 +109,37 @@ public class Solution
 
     public void display(int[][] b, int n)
     {
-
+ int storeRow = 0;
+ int storeCol = 0;
+int ch = 0;
 // We have got the solution, just display it
+        for(int i = 0 ; i<=23 ; i++){
+            System.out.print("_");
+        }
+        System.out.println();
+
         for (int i = 0; i < n; i++)
         {
             for (int d = 0; d < n; d++)
-            {
+            {   if(ch == 0 ){
+                System.out.print("|");
+            }
                 System.out.print(b[i][d]);
-                System.out.print(" ");
+                if(d == 3-1|| d == 6-1|| d==9-1) {
+                    System.out.print(" |");
+                }
+                    System.out.print(" ");
+                    storeRow = d;
+                    ch++;
+                }
+
+
+            if(i == 3-1|| i == 6-1 ){
+                System.out.println();
+                for(int x = 0 ; x<=23 ; x++){
+                    System.out.print("_");
+                }
+//                ();
             }
 
             System.out.print("\n");
@@ -125,6 +148,10 @@ public class Solution
             {
                 System.out.print("");
             }
+            ch= 0;
+        }
+        for(int i = 0 ; i<= 23 ; i++){
+            System.out.print("_");
         }
     }
 
